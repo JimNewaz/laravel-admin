@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Brand;
+use APP\Models\Campaigns;
 
 class DashboardController extends Controller
 {
@@ -21,8 +22,7 @@ class DashboardController extends Controller
     public function CreateCategory(){
         return view('admin.createcategory');
     }
-
-    // Store Category
+    
     public function StoreCategory(Request $request){
         $request->validate([
             'title' => 'category_name|unique:categories',
@@ -49,8 +49,7 @@ class DashboardController extends Controller
         
         return redirect()->route('admin.allcategory')->with('message', 'Category has been added successfully');
     }    
-
-    // All Categories
+    
     public function AllCategory(){
         $categories = Category::latest()->get();         
         return view('admin.allcategory', compact('categories'));
@@ -62,7 +61,7 @@ class DashboardController extends Controller
         return view('admin.createsubcategory', compact('categories'));
     }
 
-    // Store Sub Categories
+    
     public function StoreSubCategory(Request $request){
         $request->validate([
             'title' => 'subcategory|unique:sub_categories',
@@ -95,10 +94,12 @@ class DashboardController extends Controller
         return view('admin.allsubcategory', compact('subcategories'));
     }
 
+
+    //Brands
     public function CreateBrands(){
         return view('admin.createbrands');
     }
-
+    
     public function StoreBrands(Request $request){
         $request->validate([
             'title' => 'brand_name|unique:categories',
@@ -117,5 +118,70 @@ class DashboardController extends Controller
         $brands = Brand::latest()->get();
         return view('admin.allbrands', compact('brands'));
     }
+
+
+    //Campaigns
+    public function CreateCampaign(){
+        return view('admin.createcampaign');
+    }
+
+    public function StoreCampaign(Request $request){
+        $request->validate([
+            'title' => 'campaign_name|unique:campaign_name',
+        ]);
+
+        if($request->hasFile('campaign_image')) {
+
+            $request->validate([
+                'image' => 'mimes:jpeg,bmp,png,jpg' // Only allow .jpg, .bmp and .png file types.
+            ]);
+            
+            $request->file('campaign_image')->store('campaign', 'public');            
+        }
+
+        Campaigns::insert([
+            'campaign_name' => $request->campaign_name,
+            'campaign_subtitle' => $request->campaign_subtitle,
+            'campaign_image' => $request->file('campaign_image')->hashName(),
+            'status' => $request->status,
+        ]);
+        
+        return redirect()->route('admin.allcampaigns')->with('message', 'Campaign has been added successfully');
+
+
+    }
+
+
+    public function AllCampaign(){
+        return view('admin.allcampaigns');
+    }
+
+    //Newsletter
+    public function AllSubscriber(){
+        return view('admin.allsubscribers');
+    }
+
+    public function AddSubscriber(){
+        return view('admin.addsubscriber');
+    }
+
+    public function EmailToSub(){
+        return view('admin.emailtosub');
+    }
+
+    //Tickets
+    public function AllTickets(){
+        return view('admin.alltickets');
+    }
+
+    public function AddTicket(){
+        return view('admin.addticket');
+    }
+
+    public function Departments(){
+        return view('admin.departments');
+    }
+
+
 
 }

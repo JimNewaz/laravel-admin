@@ -34,21 +34,41 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth','role:admin')->group(function (){
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
+
         Route::get('/admin/messages', 'ContactMessage')->name('admin.messages');
         
+        //Category
         Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
-        Route::post('/admin/store-category', 'StoreCategory')->name('admin.storecategory');
-       
+        Route::post('/admin/store-category', 'StoreCategory')->name('admin.storecategory');       
         Route::get('/admin/allcategory', 'AllCategory')->name('admin.allcategory');
 
+        //Sub Category
         Route::get('/admin/create-sub-category', 'Createsubcategory')->name('admin.createsubcategory');
         Route::get('/admin/store-sub-category', 'StoreSubCategory')->name('admin.storesubcategory');
         Route::get('/admin/allsubcategory', 'AllSubCategory')->name('admin.allsubcategory');
 
-        
+        //Brands
         Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');
         Route::get('/admin/store-brands', 'StoreBrands')->name('admin.storebrands');
         Route::get('/admin/allbrands', 'AllBrands')->name('admin.allbrands');
+
+        // Campaigns
+        Route::get('/admin/create-campaign', 'CreateCampaign')->name('admin.createcampaign');
+        Route::get('/admin/store-campaign', 'StoreCampaign')->name('admin.storecampaign');
+        Route::get('/admin/all-campaigns', 'AllCampaign')->name('admin.allcampaigns');
+
+        //Newsletter
+        Route::get('/admin/all-subscribers', 'AllSubscriber')->name('admin.allsubscribers');
+        Route::get('/admin/add-subscriber', 'AddSubscriber')->name('admin.addsubscriber');
+        Route::get('/admin/email-to-subscribers', 'EmailToSub')->name('admin.emailtosub');
+
+        //Tickets
+        Route::get('/admin/all-tickets', 'AllTickets')->name('admin.alltickets');
+        Route::get('/admin/add-ticket', 'AddTicket')->name('admin.addticket');
+        Route::get('/admin/departments', 'Departments')->name('admin.departments');
+
+
+
     });
 
     Route::controller(ProductController::class)->group(function(){
