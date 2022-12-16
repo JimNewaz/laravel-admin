@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\Brand;
 
 class DashboardController extends Controller
 {
@@ -78,8 +79,8 @@ class DashboardController extends Controller
     
         SubCategory::insert([
             'category_name' => $request->category_name,
-            'sub_category_name' => $request->sub_category_name,
-            'slug' => strtolower(str_replace(' ','-', $request->sub_category_name)),
+            'sub_category_name' => $request->subcategory,
+            'slug' => strtolower(str_replace(' ','-', $request->subcategory)),
             'sub_category_image' => $request->file('sub-category-image')->hashName(),
             'status' => $request->status,
         ]);
@@ -90,15 +91,31 @@ class DashboardController extends Controller
     }
 
     public function AllSubCategory(){
-        return view('admin.allsubcategory');
+        $subcategories = SubCategory::latest()->get();
+        return view('admin.allsubcategory', compact('subcategories'));
     }
 
     public function CreateBrands(){
         return view('admin.createbrands');
     }
 
+    public function StoreBrands(Request $request){
+        $request->validate([
+            'title' => 'brand_name|unique:categories',
+        ]);
+
+
+        Brand::insert([
+            'brand_name' => $request->brand_name,
+            'slug' => strtolower(str_replace(' ','-', $request->brand_name)),           
+        ]);
+        
+        return redirect()->route('admin.allbrands')->with('message', 'Brand has been added successfully');
+    }
+
     public function AllBrands(){
-        return view('admin.allbrands');
+        $brands = Brand::latest()->get();
+        return view('admin.allbrands', compact('brands'));
     }
 
 }

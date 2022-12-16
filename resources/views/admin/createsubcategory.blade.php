@@ -24,12 +24,13 @@ Admin - Create Sub Category
                             </div>
                         </div>
 
+                        
                         <div class="form-group row">
                             <label for="categorystatus" class="col-sm-3 col-form-label">Select Category</label>
                             <div class="col-sm-9">
                                 <select class="form-control" name="category_name">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category -> category_name }}"> {{ $category -> category_name   }}</option>                                    
+                                @foreach ($categories as $category)                                    
+                                    <option value="{{ $category -> category_name }}"> {{ $category -> category_name }}</option>                                    
                                 @endforeach
                                 </select>
                             </div>

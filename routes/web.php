@@ -47,6 +47,7 @@ Route::middleware('auth','role:admin')->group(function (){
 
         
         Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');
+        Route::get('/admin/store-brands', 'StoreBrands')->name('admin.storebrands');
         Route::get('/admin/allbrands', 'AllBrands')->name('admin.allbrands');
     });
 
