@@ -25,6 +25,9 @@
 /img/favicon.ico" />
 
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -276,17 +279,21 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="layout"></i><span>Campaign</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('admin.createcampaign') }}">Create Campaign</a></li>
-                                <li><a class="nav-link" href="{{ route('admin.allcampaigns') }}">All Campaigns</a></li>                                
+                                <li><a class="nav-link" href="{{ route('admin.createcampaign') }}">Create Campaign</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.allcampaigns') }}">All Campaigns</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="grid"></i><span>Newsletter</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('admin.addsubscriber') }}">Add Subscriber</a></li>
-                                <li><a class="nav-link" href="{{ route('admin.allsubscribers') }}">All Subscribers</a></li>
-                                <li><a class="nav-link" href="{{ route('admin.emailtosub') }}">Send Email to all</a></li>                                
+                                <li><a class="nav-link" href="{{ route('admin.addsubscriber') }}">Add Subscriber</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.allsubscribers') }}">All Subscribers</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.emailtosub') }}">Send Email to all</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -295,10 +302,10 @@
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="{{ route('admin.alltickets') }}">All Tickets</a></li>
                                 <li><a class="nav-link" href="{{ route('admin.addticket') }}">Add New Ticket</a></li>
-                                <li><a class="nav-link" href="{{ route('admin.departments') }}">Departments</a></li>                                
+                                <li><a class="nav-link" href="{{ route('admin.departments') }}">Departments</a></li>
                             </ul>
                         </li>
-                        
+
                         <li class="menu-header">Media</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
@@ -521,6 +528,14 @@
 /js/custom.js"></script>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+
+    </script>
 
 
 </body>

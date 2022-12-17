@@ -7,16 +7,21 @@ Admin - Create Campaign
 @section('content')
 
 <style>
-    .btn1{
-        padding:20px;
-        margin-bottom:20px
+    .btn1 {
+        padding: 20px;
+        margin-bottom: 20px
     }
-    .custom-btn{
+
+    .custom-btn {
         height: 80px;
         width: 200px;
         font-size: 16px;
     }
+
 </style>
+
+
+
 
 <div class="container">
     <div class="row">
@@ -26,23 +31,25 @@ Admin - Create Campaign
                     <h4 class="text-center">Please Select One</h4>
                 </div>
 
-                
+
 
                 <div class="row justify-content-center">
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
                         <div class="btn1 text-center">
-                            <button class="btn btn-primary custom-btn" id="product" onclick="func1()">Products</button>
+                            <button class="btn btn-primary custom-btn" id="product" onclick="func1()">Product
+                                Campaign</button>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="btn1 text-center">
-                            <button class="btn btn-success custom-btn" id="campaign" onclick="func2()">Campaign</button>
+                            <button class="btn btn-success custom-btn" id="campaign" onclick="func2()">General
+                                Campaign</button>
                         </div>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
-                
+
 
             </div>
         </div>
@@ -54,19 +61,60 @@ Admin - Create Campaign
             <div class="card">
                 <div class="card-header text-center">
                     <h4 class="text-center">Create Product Campaign </h4>
-                </div>               
-
-                <div class="row justify-content-center">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        
-                    </div>
-                    <div class="col-md-4">
-                        
-                    </div>
-                    <div class="col-md-2"></div>
                 </div>
-                
+
+                <form action="{{ route('admin.storecampaign') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    @method('GET')
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label for="inputAddress">Select Product</label>
+                            <select class="js-example-basic-single form-control" name="state" style="width:100%">
+                                <option value="AL">Alabama</option>                       
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Original Price</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">Campaign Price</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>                            
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">No of available units</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">No. of Units for Sale</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>                            
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">                              
+                                <label for="startDate">Start Date</label>
+                                <input id="startDate" class="form-control" type="date" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="End Date">End Date</label>
+                                <input id="endDate" class="form-control" type="date" />
+                            </div>                            
+                        </div>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Create Campaign</button>
+                    </div>
+                </form>
+
 
             </div>
         </div>
@@ -77,7 +125,7 @@ Admin - Create Campaign
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4 class="text-center">Create Campaign </h4>
+                    <h4 class="text-center">Create General Campaign </h4>
                 </div>
 
                 <form action="{{ route('admin.storecampaign') }}" method="POST" enctype="multipart/form-data">
@@ -88,27 +136,32 @@ Admin - Create Campaign
                         <div class="form-group row">
                             <label for="campaign_name" class="col-sm-3 col-form-label">Campaign Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="campaign_name" name="campaign_name" placeholder="">
+                                <input type="text" class="form-control" id="campaign_name" name="campaign_name"
+                                    placeholder="">
                             </div>
-                        </div>    
+                        </div>
                         <div class="form-group row">
                             <label for="campaign_subtitle" class="col-sm-3 col-form-label">Campaign Subtitile</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="campaign_subtitle" name="campaign_subtitle" placeholder="">
+                                <input type="text" class="form-control" id="campaign_subtitle" name="campaign_subtitle"
+                                    placeholder="">
                             </div>
-                        </div>   
+                        </div>
 
                         <div class="form-group row">
                             <label for="campaign_image" class="col-sm-3 col-form-label">Campaign Image</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" id="campaign_image" name="campaign_image" placeholder="">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="campaign_image">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
                             </div>
-                        </div> 
+                        </div>
 
                         <div class="form-group row">
                             <label for="campaign_status" class="col-sm-3 col-form-label">Campaign Status</label>
                             <div class="col-sm-9">
-                                <select class="form-control" name="campaign_status">
+                                <select class="form-control" name="status">
                                     <option value="active">Publish</option>
                                     <option value="inactive">Draft</option>
                                 </select>
@@ -119,8 +172,8 @@ Admin - Create Campaign
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Create Campaign</button>
                     </div>
-                </form>        
-                
+                </form>
+
 
             </div>
         </div>
@@ -131,13 +184,13 @@ Admin - Create Campaign
 
 
 <script>
-    function func1(){
+    function func1() {
 
         var general = document.getElementById('generalcampaign');
         general.style.display = "none";
 
         var decide = document.getElementById('createcampaign');
-        
+
         if (decide.style.display === "none") {
             decide.style.display = "block";
         } else {
@@ -145,13 +198,13 @@ Admin - Create Campaign
         }
     }
 
-    function func2(){
+    function func2() {
         var decide = document.getElementById('createcampaign');
 
         decide.style.display = "none";
 
         var general = document.getElementById('generalcampaign');
-        
+
 
 
         if (general.style.display === "none") {
@@ -161,8 +214,6 @@ Admin - Create Campaign
         }
     }
 
-    
-    
 </script>
 
 @endsection

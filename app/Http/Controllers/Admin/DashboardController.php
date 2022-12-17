@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Brand;
-use APP\Models\Campaigns;
+use App\Models\GeneralCampaign;
+use App\Models\ProductCampaign;
+
 
 class DashboardController extends Controller
 {
@@ -139,7 +141,7 @@ class DashboardController extends Controller
             $request->file('campaign_image')->store('campaign', 'public');            
         }
 
-        Campaigns::insert([
+        GeneralCampaign::insert([
             'campaign_name' => $request->campaign_name,
             'campaign_subtitle' => $request->campaign_subtitle,
             'campaign_image' => $request->file('campaign_image')->hashName(),
