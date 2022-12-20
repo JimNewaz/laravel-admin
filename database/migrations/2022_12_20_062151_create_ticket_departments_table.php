@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('newsletters', function (Blueprint $table) {
+        Schema::create('ticket_departments', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('token')->default('0');
-            $table->string('verified')->default('yes');
+            $table->string('department_name');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newsletters');
+        Schema::dropIfExists('ticket_departments');
     }
 };

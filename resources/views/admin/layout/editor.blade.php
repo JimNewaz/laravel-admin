@@ -2,36 +2,27 @@
 <html lang="en">
 
 
-<!-- index.html  21 Nov 2019 03:44:50 GMT -->
-
+<!-- forms-editor.html  21 Nov 2019 03:55:08 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>@yield('pagetitle')</title>
-
-
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}
-/css/app.min.css">
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}
-/css/style.css">
-    <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}
-/css/components.css">
-    <!-- Custom style CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}
-/css/custom.css">
-    <link rel='shortcut icon' type='image/x-icon' href="{{ asset('dashboard_asset/assets') }}
-/img/favicon.ico" />
-
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>@yield('pagetitle')</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/css/app.min.css">
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/bundles/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/bundles/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/bundles/codemirror/theme/duotone-dark.css">
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/bundles/jquery-selectric/selectric.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/css/style.css">
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="{{ asset('dashboard_asset/assets') }}/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href="{{ asset('dashboard_asset/assets') }}/img/favicon.ico" />
 </head>
 
 <body>
-    <div class="loader"></div>
+<div class="loader"></div>
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
@@ -511,38 +502,22 @@
             </footer>
         </div>
     </div>
-    <!-- General JS Scripts -->
-    <script src="{{ asset('dashboard_asset/assets') }}
-/js/app.min.js"></script>
-    <!-- JS Libraies -->
-    <script src="{{ asset('dashboard_asset/assets') }}
-/bundles/apexcharts/apexcharts.min.js"></script>
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('dashboard_asset/assets') }}
-/js/page/index.js"></script>
-    <!-- Template JS File -->
-    <script src="{{ asset('dashboard_asset/assets') }}
-/js/scripts.js"></script>
-    <!-- Custom JS File -->
-    <script src="{{ asset('dashboard_asset/assets') }}
-/js/custom.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('.js-example-basic-single').select2();
-        });
-
-    </script>
-
-
+  <!-- General JS Scripts -->
+  <script src="{{ asset('dashboard_asset/assets') }}/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="{{ asset('dashboard_asset/assets') }}/bundles/summernote/summernote-bs4.js"></script>
+  <script src="{{ asset('dashboard_asset/assets') }}/bundles/codemirror/lib/codemirror.js"></script>
+  <script src="{{ asset('dashboard_asset/assets') }}/bundles/codemirror/mode/javascript/javascript.js"></script>
+  <script src="{{ asset('dashboard_asset/assets') }}/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+  <script src="{{ asset('dashboard_asset/assets') }}/bundles/ckeditor/ckeditor.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="{{ asset('dashboard_asset/assets') }}/js/page/ckeditor.js"></script>
+  <!-- Template JS File -->
+  <script src="{{ asset('dashboard_asset/assets') }}/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="{{ asset('dashboard_asset/assets') }}/js/custom.js"></script>
 </body>
 
 
-<!-- index.html  21 Nov 2019 03:47:04 GMT -->
-
-
-
+<!-- forms-editor.html  21 Nov 2019 03:55:16 GMT -->
 </html>

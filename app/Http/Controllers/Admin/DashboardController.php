@@ -9,7 +9,9 @@ use App\Models\SubCategory;
 use App\Models\Brand;
 use App\Models\GeneralCampaign;
 use App\Models\ProductCampaign;
-
+use App\Models\Newsletter;
+use App\Models\TicketDepartment;
+use App\Models\Tickets;
 
 class DashboardController extends Controller
 {
@@ -155,16 +157,31 @@ class DashboardController extends Controller
 
 
     public function AllCampaign(){
-        return view('admin.allcampaigns');
+        $generalcampaign = GeneralCampaign::latest()->get();
+        return view('admin.allcampaigns', compact('generalcampaign'));
     }
 
-    //Newsletter
-    public function AllSubscriber(){
-        return view('admin.allsubscribers');
-    }
+    //Newsletter    
 
     public function AddSubscriber(){
         return view('admin.addsubscriber');
+    }
+
+    public function StoreSubscriber(Request $request){
+        $request->validate([
+            'title' => 'email|unique:email',
+        ]);
+
+        Newsletter::insert([
+            'email' => $request->email,            
+        ]);
+
+        return redirect()->route('admin.allsubscribers')->with('message', 'Subscriber has been added successfully');
+    }
+
+    public function AllSubscriber(){
+        $subscriber = Newsletter::latest()->get();
+        return view('admin.allsubscribers', compact('subscriber'));
     }
 
     public function EmailToSub(){
@@ -173,17 +190,45 @@ class DashboardController extends Controller
 
     //Tickets
     public function AllTickets(){
-        return view('admin.alltickets');
+        $ticket=Tickets::latest()->get();
+        return view('admin.alltickets', compact('ticket'));
     }
 
+   
     public function AddTicket(){
-        return view('admin.addticket');
+        $departments=TicketDepartment::latest()->get();
+        return view('admin.addticket', compact('departments'));
     }
 
-    public function Departments(){
-        return view('admin.departments');
+    public function StoreTicket(Request $request){       
+
+        Tickets::insert([
+            'title' => $request->title,  
+            'subtitle' => $request->subtitle,  
+            'department' => $request->department,
+            'priority' => $request->priority,
+            'description' => $request->description,
+        ]);
+        
+        return redirect()->route('admin.alltickets')->with('message', 'Ticket has been added successfully');
     }
 
+    public function Departments(){ 
+        $departments=TicketDepartment::latest()->get();
+        return view('admin.departments',compact('departments'));
+    }
 
+    public function StoreDepartment(Request $request){ 
+        $request->validate([
+            'title' => 'department_name|unique:department_name',
+        ]);
+
+        TicketDepartment::insert([
+            'department_name' => $request->department_name,  
+            'status' => $request->status,          
+        ]);
+        
+        return redirect()->route('admin.departments')->with('message', 'Department has been added successfully');
+    }
 
 }

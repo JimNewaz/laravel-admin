@@ -60,13 +60,17 @@ Route::middleware('auth','role:admin')->group(function (){
         //Newsletter
         Route::get('/admin/all-subscribers', 'AllSubscriber')->name('admin.allsubscribers');
         Route::get('/admin/add-subscriber', 'AddSubscriber')->name('admin.addsubscriber');
+        Route::get('/admin/store-subscriber', 'StoreSubscriber')->name('admin.storesubscriber');
         Route::get('/admin/email-to-subscribers', 'EmailToSub')->name('admin.emailtosub');
 
         //Tickets
         Route::get('/admin/all-tickets', 'AllTickets')->name('admin.alltickets');
-        Route::get('/admin/add-ticket', 'AddTicket')->name('admin.addticket');
-        Route::get('/admin/departments', 'Departments')->name('admin.departments');
 
+        Route::get('/admin/add-ticket', 'AddTicket')->name('admin.addticket');
+        Route::get('/admin/store-ticket', 'StoreTicket')->name('admin.storeticket');
+        
+        Route::get('/admin/departments', 'Departments')->name('admin.departments');
+        Route::get('/admin/store-department', 'StoreDepartment')->name('admin.storedepartment');
 
 
     });

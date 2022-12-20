@@ -58,7 +58,7 @@ Admin - Create Campaign
     <!-- Product Campaign -->
     <div class="row" id="createcampaign" style="display:none">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header text-center">
                     <h4 class="text-center">Create Product Campaign </h4>
                 </div>
@@ -123,7 +123,7 @@ Admin - Create Campaign
     <!-- General Campaign -->
     <div class="row" id="generalcampaign" style="display:none">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card card-success">
                 <div class="card-header text-center">
                     <h4 class="text-center">Create General Campaign </h4>
                 </div>
