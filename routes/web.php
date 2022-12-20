@@ -72,6 +72,9 @@ Route::middleware('auth','role:admin')->group(function (){
         Route::get('/admin/departments', 'Departments')->name('admin.departments');
         Route::get('/admin/store-department', 'StoreDepartment')->name('admin.storedepartment');
 
+        //Coupons
+        Route::get('/admin/coupon', 'AddCoupon')->name('admin.createcoupon');
+        Route::get('/admin/store-coupon', 'StoreCoupon')->name('admin.storecoupon');
 
     });
 

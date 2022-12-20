@@ -70,31 +70,27 @@
                             </div>
                             <div class="dropdown-list-content dropdown-list-message">
                                 <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-1.png" class="rounded-circle">
+											text-white"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-1.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">John
                                             Deo</span>
                                         <span class="time messege-text">Please check your mail !!</span>
                                         <span class="time">2 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-2.png" class="rounded-circle">
+                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-2.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                                             Smith</span> <span class="time messege-text">Request for leave
                                             application</span>
                                         <span class="time">5 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-5.png" class="rounded-circle">
+                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-5.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
                                             Ryan</span> <span class="time messege-text">Your payment invoice is
                                             generated.</span> <span class="time">12 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-4.png" class="rounded-circle">
+                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-4.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
                                             Smith</span> <span class="time messege-text">hii John, I have upload
                                             doc
@@ -102,8 +98,7 @@
                                             Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-3.png" class="rounded-circle">
+                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-3.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
                                             Joshi</span> <span class="time messege-text">Please do as specify.
                                             Let me
@@ -111,8 +106,7 @@
                                             Days Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/users/user-2.png" class="rounded-circle">
+                                        <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-2.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                                             Smith</span> <span class="time messege-text">Client Requirements</span>
                                         <span class="time">2 Days Ago</span>
@@ -177,8 +171,7 @@
                         </div>
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
-                            class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}
-/img/user.png" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/user.png" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
                             <div class="dropdown-title">Hello Sarah Smith</div>
                             <a href="profile.html" class="dropdown-item has-icon"> <i class="far
@@ -306,14 +299,14 @@
                             </ul>
                         </li>
 
-                        <li class="menu-header">Media</li>
+                        <li class="menu-header">Coupon & Other</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="image"></i><span>Gallery</span></a>
+                                    data-feather="image"></i><span>Coupon</span></a>      
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="light-gallery.html">Light Gallery</a></li>
-                                <li><a href="gallery1.html">Gallery 2</a></li>
-                            </ul>
+                                <li><a href="{{ route('admin.createcoupon') }}">Create Coupon</a></li>
+                                <li><a class="nav-link" href="owl-carousel.html">All Coupons</a></li>
+                            </ul>                      
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i

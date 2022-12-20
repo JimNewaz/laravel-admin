@@ -12,6 +12,7 @@ use App\Models\ProductCampaign;
 use App\Models\Newsletter;
 use App\Models\TicketDepartment;
 use App\Models\Tickets;
+use App\Models\Coupon;
 
 class DashboardController extends Controller
 {
@@ -231,4 +232,31 @@ class DashboardController extends Controller
         return redirect()->route('admin.departments')->with('message', 'Department has been added successfully');
     }
 
+    //Coupons
+    public function AddCoupon(){
+        $category = Category::latest()->get();
+        $subcategory = SubCategory::latest()->get();
+        return view('admin.createcoupon', compact('category', 'subcategory'));
+    }
+
+    public function StoreCoupon(Request $request){
+        // $request->validate([
+        //     'title' => 'code|unique:code',
+        // ]);
+
+       
+
+        Coupon::insert([
+            'title' => $request->title,
+            'code' => $request->code,
+            'discounton' => $request->discounton,
+            'specificc' => $request->specificc,
+            'type' => $request->type,  
+            'exdate' => $request->exdate,  
+            'status' => $request->status,   
+            'discount' => $request->discount,       
+        ]);
+        
+        return redirect()->route('admin.createcoupon')->with('message', 'Coupon has been added successfully');
+    }
 }

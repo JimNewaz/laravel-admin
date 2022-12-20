@@ -78,13 +78,17 @@
                                         <span class="time">5 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+                                        <img alt="image"
+                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-5.png"
+                                            class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
                                             Ryan</span> <span class="time messege-text">Your payment invoice is
                                             generated.</span> <span class="time">12 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
+                                        <img alt="image"
+                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-4.png"
+                                            class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
                                             Smith</span> <span class="time messege-text">hii John, I have upload
                                             doc
@@ -92,7 +96,9 @@
                                             Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
+                                        <img alt="image"
+                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-3.png"
+                                            class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
                                             Joshi</span> <span class="time messege-text">Please do as specify.
                                             Let me
@@ -100,7 +106,9 @@
                                             Days Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                                        <img alt="image"
+                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-2.png"
+                                            class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                                             Smith</span> <span class="time messege-text">Client Requirements</span>
                                         <span class="time">2 Days Ago</span>
@@ -190,7 +198,7 @@
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
                         <a href="index.html"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/logo.png"
-                                class="header-logo" /> <span class="logo-name">Otika</span>
+                                class="header-logo" /> <span class="logo-name">Admin</span>
                         </a>
                     </div>
                     <ul class="sidebar-menu">
@@ -263,60 +271,46 @@
                         </li>
 
 
-                        <li class="menu-header">Otika</li>
+                        <li class="menu-header">Campaign & Other</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="layout"></i><span>Forms</span></a>
+                                    data-feather="layout"></i><span>Campaign</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="basic-form.html">Basic Form</a></li>
-                                <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                                <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                                <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                                <li><a class="nav-link" href="form-wizard.html">Form Wizard</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.createcampaign') }}">Create Campaign</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.allcampaigns') }}">All Campaigns</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="grid"></i><span>Tables</span></a>
+                                    data-feather="grid"></i><span>Newsletter</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li>
-                                <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li>
-                                <li><a class="nav-link" href="datatables.html">Datatable</a></li>
-                                <li><a class="nav-link" href="export-table.html">Export Table</a></li>
-                                <li><a class="nav-link" href="editable-table.html">Editable Table</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.addsubscriber') }}">Add Subscriber</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.allsubscribers') }}">All Subscribers</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.emailtosub') }}">Send Email to all</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="pie-chart"></i><span>Charts</span></a>
+                                    data-feather="pie-chart"></i><span>Support Tickets</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chart-amchart.html">amChart</a></li>
-                                <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
-                                <li><a class="nav-link" href="chart-echart.html">eChart</a></li>
-                                <li><a class="nav-link" href="chart-chartjs.html">Chartjs</a></li>
-                                <li><a class="nav-link" href="chart-sparkline.html">Sparkline</a></li>
-                                <li><a class="nav-link" href="chart-morris.html">Morris</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.alltickets') }}">All Tickets</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.addticket') }}">Add New Ticket</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.departments') }}">Departments</a></li>
                             </ul>
                         </li>
+
+                        <li class="menu-header">Coupon & Other</li>
                         <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="feather"></i><span>Icons</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="image"></i><span>Coupon</span></a>      
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="icon-font-awesome.html">Font Awesome</a></li>
-                                <li><a class="nav-link" href="icon-material.html">Material Design</a></li>
-                                <li><a class="nav-link" href="icon-ionicons.html">Ion Icons</a></li>
-                                <li><a class="nav-link" href="icon-feather.html">Feather Icons</a></li>
-                                <li><a class="nav-link" href="icon-weather-icon.html">Weather Icon</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-header">Media</li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="image"></i><span>Gallery</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="light-gallery.html">Light Gallery</a></li>
-                                <li><a href="gallery1.html">Gallery 2</a></li>
-                            </ul>
+                                <li><a href="{{ route('admin.createcoupon') }}">Create Coupon</a></li>
+                                <li><a class="nav-link" href="owl-carousel.html">All Coupons</a></li>
+                            </ul>                            
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
@@ -406,6 +400,7 @@
             <!-- Main Content -->
             <div class="main-content">
                 @yield('content')
+
                 <div class="settingSidebar">
                     <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
                     </a>
@@ -501,7 +496,9 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <footer class="main-footer">
                 <div class="footer-left">
                     <a href="templateshub.net">Templateshub</a></a>
