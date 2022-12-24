@@ -75,7 +75,11 @@ Route::middleware('auth','role:admin')->group(function (){
         //Coupons
         Route::get('/admin/coupon', 'AddCoupon')->name('admin.createcoupon');
         Route::get('/admin/store-coupon', 'StoreCoupon')->name('admin.storecoupon');
+        Route::get('/admin/all-coupons', 'AllCoupons')->name('admin.allcoupons');
 
+        //Country 
+        Route::get('/admin/country', 'Country')->name('admin.country');
+        Route::get('/admin/state', 'State')->name('admin.state');
     });
 
     Route::controller(ProductController::class)->group(function(){

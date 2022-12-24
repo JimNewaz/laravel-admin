@@ -305,7 +305,7 @@
                                     data-feather="image"></i><span>Coupon</span></a>      
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('admin.createcoupon') }}">Create Coupon</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">All Coupons</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.allcoupons') }}">All Coupons</a></li>
                             </ul>                      
                         </li>
                         <li class="dropdown">
@@ -318,19 +318,13 @@
                         </li>
                         <li><a class="nav-link" href="timeline.html"><i
                                     data-feather="sliders"></i><span>Timeline</span></a></li>
-                        <li class="menu-header">Maps</li>
+                        <li class="menu-header">Country & State</li>
                         <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Google
-                                    Maps</span></a>
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
+                            <span>Country Manage</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                                <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                                <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                                <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                                <li><a href="gmaps-marker.html">Marker</a></li>
-                                <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                                <li><a href="gmaps-route.html">Route</a></li>
-                                <li><a href="gmaps-simple.html">Simple</a></li>
+                                <li><a href="{{ route('admin.country') }}">Country</a></li>
+                                <li><a href="{{ route('admin.state') }}">State</a></li>                                
                             </ul>
                         </li>
                         <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector

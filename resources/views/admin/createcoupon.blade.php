@@ -155,7 +155,7 @@ Admin - Add Coupon
                             
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Create Ticket</button>
+                        <button type="submit" class="btn btn-primary">Create Coupon</button>
                     </div>
                 </form>
 

@@ -240,12 +240,6 @@ class DashboardController extends Controller
     }
 
     public function StoreCoupon(Request $request){
-        // $request->validate([
-        //     'title' => 'code|unique:code',
-        // ]);
-
-       
-
         Coupon::insert([
             'title' => $request->title,
             'code' => $request->code,
@@ -257,6 +251,22 @@ class DashboardController extends Controller
             'discount' => $request->discount,       
         ]);
         
-        return redirect()->route('admin.createcoupon')->with('message', 'Coupon has been added successfully');
+        return redirect()->route('admin.allcoupons')->with('message', 'Coupon has been added successfully');
     }
+
+    public function AllCoupons(){     
+        $coupons = Coupon::latest()->get();  
+        return view('admin.allcoupons', compact('coupons'));
+    }
+
+    //Country
+
+    public function Country(){
+        return view('admin.country');
+    }
+
+    public function State(){
+        return view('admin.state');
+    }
+
 }
