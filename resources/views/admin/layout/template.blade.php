@@ -308,17 +308,9 @@
                                 <li><a class="nav-link" href="{{ route('admin.allcoupons') }}">All Coupons</a></li>
                             </ul>                      
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="flag"></i><span>Sliders</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="carousel.html">Bootstrap Carousel.html</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">Owl Carousel</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="nav-link" href="timeline.html"><i
-                                    data-feather="sliders"></i><span>Timeline</span></a></li>
-                        <li class="menu-header">Country & State</li>
+                        
+                        
+                        <li class="menu-header">Country & Tax</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
                             <span>Country Manage</span></a>
@@ -327,8 +319,17 @@
                                 <li><a href="{{ route('admin.state') }}">State</a></li>                                
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector
-                                    Map</span></a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
+                            <span>Tax Settings</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('admin.countrytax') }}">Country Tax</a></li>
+                                <li><a href="{{ route('admin.statetax') }}">State Taz</a></li>                                
+                            </ul>
+                        </li>
+
+
                         <li class="menu-header">Pages</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i

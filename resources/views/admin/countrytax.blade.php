@@ -1,7 +1,7 @@
 @extends('admin.layout.datatable')
 
 @section('pagetitle')
-Admin - State
+Admin - Country Tax
 @endsection
 
 @section('content')
@@ -12,20 +12,14 @@ Admin - State
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4>Create State</h4>
+                    <h4>Add New Country Tax</h4>
                 </div>
-                <form action="{{ route('admin.storestate') }}" method="POST" >
+                <form action="{{ route('admin.storecountrytax') }}" method="POST">
                     @csrf
 
                     @method('GET')
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <label for="state" class="col-sm-3 col-form-label">State</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="state" name="name" placeholder="">
-                            </div>
-                        </div> 
-                        
+                    <div class="card-body">                        
+
                         <div class="form-group row">
                             <label for="categorystatus" class="col-sm-3 col-form-label">Country</label>
                             <div class="col-sm-9">
@@ -292,18 +286,14 @@ Admin - State
                         </div>
 
                         <div class="form-group row">
-                            <label for="status" class="col-sm-3 col-form-label">Status</label>
+                            <label for="percentage" class="col-sm-3 col-form-label">Percentage</label>
                             <div class="col-sm-9">
-                                <select class="form-control" name="status">
-                                    <option value="active">Publish</option>
-                                    <option value="inactive">Draft</option>
-                                </select>
+                                <input type="number" name="percentage" class="form-control">
                             </div>
-                        </div> 
-                            
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Create State</button>
+                        <button type="submit" class="btn btn-primary">Add Tax</button>
                     </div>
                 </form>
 
@@ -312,12 +302,13 @@ Admin - State
     </div>
 </div>
 
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>All Country</h4>
+                    <h4>All Country Taxes</h4>
                 </div>
 
                 @if (session()->has('message'))
@@ -331,30 +322,26 @@ Admin - State
                     <div class="table-responsive">
                         <table class="table table-striped" id="table-1">
                             <thead>
-                                <tr>
-                                    <th>State</th>
+                                <tr>    
+                                    <th>#</th>                                
                                     <th>Country</th>
-                                    <th>Status</th>
+                                    <th>Tax</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
 
 
-                                @foreach ($states as $state)
+                                @foreach ($tax as $cou)
 
                                 <tr>
-
-                                    <td>{{ $state -> name }}</td>
-                                    <td>{{ $state -> country}}</td>
+                                    <td>{{ $cou -> id }} </td>
+                                    
+                                    <td>{{ $cou -> country}}</td>
 
 
                                     <td>
-                                        @if ($state -> status == 'active')
-                                        <div class="badge badge-success badge-shadow">Active</div>
-                                        @else
-                                        <div class="badge badge-danger badge-shadow">Inactive</div>
-                                        @endif
+                                        {{ $cou -> percentage}}%
                                     </td>
                                     <td><a href="#" class="btn btn-primary">Detail</a></td>
 
@@ -374,6 +361,4 @@ Admin - State
     </div>
 </div>
 
-
 @endsection
-</h2>

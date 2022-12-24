@@ -13,6 +13,10 @@ use App\Models\Newsletter;
 use App\Models\TicketDepartment;
 use App\Models\Tickets;
 use App\Models\Coupon;
+use App\Models\Country;
+use App\Models\State;
+use App\Models\Tax;
+use App\Models\StateTax;
 
 class DashboardController extends Controller
 {
@@ -262,11 +266,81 @@ class DashboardController extends Controller
     //Country
 
     public function Country(){
-        return view('admin.country');
+        $country = Country::latest()->get();
+        return view('admin.country', compact('country'));
     }
 
-    public function State(){
-        return view('admin.state');
+    public function StoreCountry(Request $request){
+        $request->validate([
+            'title' => 'country|unique:country',
+        ]);
+
+        Country::insert([
+            'city' => $request->city,  
+            'country' => $request->country,   
+            'status' => $request->status,       
+        ]);
+        
+        
+        return redirect()->route('admin.country')->with('message', 'Country has been added successfully');
     }
+
+    
+    //State
+    public function State(){
+        $states = State::latest()->get();
+        return view('admin.state', compact('states'));
+    }
+
+    public function StoreState(Request $request){
+        $request->validate([
+            'title' => 'name|unique:name',
+        ]);
+
+        State::insert([            
+            'country' => $request->country,   
+            'status' => $request->status,       
+        ]);
+        
+        
+        return redirect()->route('admin.state')->with('message', 'State has been added successfully');
+    }
+
+    //Tax 
+    public function CountryTax(){
+        $tax = Tax::latest()->get();
+        return view('admin.countrytax', compact('tax'));
+    }
+
+  
+    public function StoreCountryTax(Request $request){       
+
+        Tax::insert([            
+            'country' => $request->country,   
+            'percentage' => $request->percentage,       
+        ]);
+        
+        
+        return redirect()->route('admin.countrytax')->with('message', 'Tax has been added successfully');
+    }
+
+    public function StateTax(){
+        $tax = StateTax::latest()->get();
+        return view('admin.statetax', compact('tax'));
+    }
+
+
+    public function StoreStateTax(Request $request){       
+
+        StateTax::insert([            
+            'state' => $request->state,   
+            'percentage' => $request->percentage,       
+        ]);
+        
+        
+        return redirect()->route('admin.statetax')->with('message', 'Tax has been added successfully');
+    }
+
+
 
 }

@@ -79,7 +79,18 @@ Route::middleware('auth','role:admin')->group(function (){
 
         //Country 
         Route::get('/admin/country', 'Country')->name('admin.country');
+        Route::get('/admin/storecountry', 'StoreCountry')->name('admin.storecountry');
         Route::get('/admin/state', 'State')->name('admin.state');
+        Route::get('/admin/storestate', 'StoreState')->name('admin.storestate');
+
+        //Tax
+        Route::get('/admin/country-tax', 'CountryTax')->name('admin.countrytax');
+        Route::get('/admin/storecountrytax', 'StoreCountryTax')->name('admin.storecountrytax');
+
+        Route::get('/admin/state-tax', 'StateTax')->name('admin.statetax');
+        Route::get('/admin/storestatetax', 'StoreStateTax')->name('admin.storestatetax');
+
+
     });
 
     Route::controller(ProductController::class)->group(function(){
