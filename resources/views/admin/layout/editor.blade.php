@@ -304,42 +304,27 @@
                             </ul>
                         </li>
 
-                        <li class="menu-header">Coupon & Other</li>
+                        <li class="menu-header">Country & Tax</li>
                         <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="image"></i><span>Coupon</span></a>      
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
+                            <span>Country Manage</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('admin.createcoupon') }}">Create Coupon</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">All Coupons</a></li>
-                            </ul>                             
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="flag"></i><span>Sliders</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="carousel.html">Bootstrap Carousel.html</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">Owl Carousel</a></li>
+                                <li><a href="{{ route('admin.country') }}">Country</a></li>
+                                <li><a href="{{ route('admin.state') }}">State</a></li>                                
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="timeline.html"><i
-                                    data-feather="sliders"></i><span>Timeline</span></a></li>
-                        <li class="menu-header">Maps</li>
+                        
                         <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Google
-                                    Maps</span></a>
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
+                            <span>Tax Settings</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                                <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                                <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                                <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                                <li><a href="gmaps-marker.html">Marker</a></li>
-                                <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                                <li><a href="gmaps-route.html">Route</a></li>
-                                <li><a href="gmaps-simple.html">Simple</a></li>
+                                <li><a href="{{ route('admin.countrytax') }}">Country Tax</a></li>
+                                <li><a href="{{ route('admin.statetax') }}">State Tax</a></li>                                
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector
-                                    Map</span></a></li>
+                       
+                       
+                        
                         <li class="menu-header">Pages</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
@@ -522,7 +507,16 @@
     <!-- Template JS File -->
     <script src="{{ asset('dashboard_asset/assets') }}/js/scripts.js"></script>
     <!-- Custom JS File -->
-    <script src="{{ asset('dashboard_asset/assets') }}/js/custom.js"></script>
+    <script src="{{ asset('dashboard_asset/assets') }}/js/custom.js"></script>      
+
+    <script src="{{ asset('dashboard_asset/assets') }}/js/tag.js"></script>      
+
+    
+    <!-- Tag js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" integrity="sha512-9UR1ynHntZdqHnwXKTaOm1s6V9fExqejKvg5XMawEMToW4sSw+3jtLrYfZPijvnwnnE8Uol1O9BcAskoxgec+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    
 </body>
 
 

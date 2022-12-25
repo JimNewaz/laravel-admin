@@ -325,7 +325,7 @@
                             <span>Tax Settings</span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('admin.countrytax') }}">Country Tax</a></li>
-                                <li><a href="{{ route('admin.statetax') }}">State Taz</a></li>                                
+                                <li><a href="{{ route('admin.statetax') }}">State Tax</a></li>                                
                             </ul>
                         </li>
 

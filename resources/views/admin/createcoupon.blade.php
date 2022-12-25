@@ -79,7 +79,7 @@ Admin - Add Coupon
                             <div class="form-group row">
                                 <label for="category" class="col-sm-3 col-form-label">Category</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="specificc">
+                                    <select class="form-control" name="category">
                                         @foreach ($category as $cat)
                                         <option value="{{ $cat -> category_name }}">{{ $cat -> category_name }}</option>   
                                         @endforeach                                                 
@@ -94,7 +94,7 @@ Admin - Add Coupon
                             <div class="form-group row">
                                 <label for="subcategory" class="col-sm-3 col-form-label">Sub Category</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="specificc">
+                                    <select class="form-control" name="subcategory">
                                         @foreach ($subcategory as $scat)
                                             <option value="{{ $scat -> sub_category_name }}">{{ $scat -> sub_category_name }}</option>   
                                         @endforeach                                             
@@ -107,10 +107,10 @@ Admin - Add Coupon
 
                         <div id="products" style="display:none">
                             <div class="form-group row">
-                                <label for="products" class="col-sm-3 col-form-label">Products</label>
+                                <label for="product" class="col-sm-3 col-form-label">Products</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="specificc">
-                                        <option value="percentage">All Products</option>                                                
+                                    <select class="form-control" name="product">
+                                        <option value="product">All Products</option>                                                
                                     </select>
                                 </div>
                             </div> 

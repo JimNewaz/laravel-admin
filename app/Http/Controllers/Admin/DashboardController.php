@@ -247,12 +247,15 @@ class DashboardController extends Controller
         Coupon::insert([
             'title' => $request->title,
             'code' => $request->code,
-            'discounton' => $request->discounton,
-            'specificc' => $request->specificc,
+            'discounton' => $request->discounton,            
             'type' => $request->type,  
             'exdate' => $request->exdate,  
             'status' => $request->status,   
-            'discount' => $request->discount,       
+            'discount' => $request->discount,    
+            'product' =>  $request->product,
+            'category' =>  $request->category,
+            'subcategory' =>  $request->subcategory,
+
         ]);
         
         return redirect()->route('admin.allcoupons')->with('message', 'Coupon has been added successfully');
