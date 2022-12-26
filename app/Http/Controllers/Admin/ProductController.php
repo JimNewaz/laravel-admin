@@ -80,13 +80,14 @@ class ProductController extends Controller
 
         
         
-        // return redirect()->route('admin.allproducts')->with('message', 'Product has been added successfully');
+        return redirect()->route('admin.allproducts')->with('message', 'Product has been added successfully');
     } 
 
 
 
 
     public function AllProducts(){
-        return view('admin.allproducts');
+        $products = Product::latest()->get();
+        return view('admin.allproducts', compact('products'));
     }
 }

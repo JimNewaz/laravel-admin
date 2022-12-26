@@ -48,7 +48,10 @@ Admin - All Brands
                             </td>
                             
                             
-                            <td><a href="#" class="btn btn-primary">Detail</a></td>
+                            <td>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a> 
+                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </td>
                           </tr>
                           
                           @endforeach
