@@ -74,7 +74,7 @@ Admin - Ticket Departments
                             <thead>
                                 <tr>
                                     <th class="">
-                                        ID
+                                        #
                                     </th>
                                     <th>Department Name</th>
                                     <th>Status</th>
@@ -83,11 +83,11 @@ Admin - Ticket Departments
                             </thead>
                             <tbody>
                                 <!-- {{ $i = 1 }} -->
-                                @foreach ($departments as $dept)
+                                @foreach ($departments as $d => $dept)
 
                                 <tr>
 
-                                    <td>{{ $dept -> id }}</td>
+                                    <td>{{ ++$d }}</td>
                                     <td>{{ $dept -> department_name}}</td>
 
 

@@ -74,10 +74,10 @@ Admin - State Tax
                             <tbody>
 
 
-                                @foreach ($tax as $cou)
+                                @foreach ($tax as $c => $cou)
 
                                 <tr>
-                                    <td>{{ $cou -> id }} </td>
+                                    <td>{{ ++$c }} </td>
                                     
                                     <td>{{ $cou -> state}}</td>
 

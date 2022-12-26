@@ -40,11 +40,11 @@ Admin - All Campaigns
                             </thead>
                             <tbody>
                                 <!-- {{ $i = 1 }} -->
-                                @foreach ($generalcampaign as $campaign)
+                                @foreach ($generalcampaign as $camp => $campaign)
 
                                 <tr>
                                     <td>
-                                        {{ $i }}
+                                        {{ ++$camp }}
                                     </td>
                                     <td>{{ $campaign->campaign_name }}</td>
                                     <td>{{ $campaign->campaign_subtitle }}</td>
@@ -63,7 +63,7 @@ Admin - All Campaigns
                                     <td><a href="#" class="btn btn-primary">Detail</a></td>
                                 </tr>
 
-                                {{ $i++ }}
+                                
 
                                 @endforeach
 
@@ -94,7 +94,7 @@ Admin - All Campaigns
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="table-1">
+                        <table class="table table-striped" id="table-2">
                             <thead>
                                 <tr>
                                     <th class="">
@@ -109,11 +109,11 @@ Admin - All Campaigns
                             </thead>
                             <tbody>
                                 <!-- {{ $i = 1 }} -->
-                                @foreach ($generalcampaign as $campaign)
+                                @foreach ($generalcampaign as $camp => $campaign)
 
                                 <tr>
                                     <td>
-                                        {{ $i }}
+                                        {{ ++$camp }}
                                     </td>
                                     <td>{{ $campaign->campaign_name }}</td>
                                     <td>{{ $campaign->campaign_subtitle }}</td>
@@ -132,7 +132,7 @@ Admin - All Campaigns
                                     <td><a href="#" class="btn btn-primary">Detail</a></td>
                                 </tr>
 
-                                {{ $i++ }}
+                                
 
                                 @endforeach
 

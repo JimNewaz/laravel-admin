@@ -332,10 +332,10 @@ Admin - Country Tax
                             <tbody>
 
 
-                                @foreach ($tax as $cou)
+                                @foreach ($tax as $c => $cou)
 
                                 <tr>
-                                    <td>{{ $cou -> id }} </td>
+                                    <td>{{ ++$c }} </td>
                                     
                                     <td>{{ $cou -> country}}</td>
 

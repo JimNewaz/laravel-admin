@@ -40,10 +40,10 @@ Admin - All Sub Categories
                         </thead>
                         <tbody>
                           <!-- {{ $i = 1 }} -->
-                        @foreach ($subcategories as $subcategory)
+                        @foreach ($subcategories as $sub => $subcategory)
                           <tr>
                             <td>
-                              {{ $i }}
+                              {{ ++$sub }}
                             </td>
                             <td>{{ $subcategory->sub_category_name }}</td>
                             <td>{{ $subcategory->category_name }}</td>
@@ -61,7 +61,7 @@ Admin - All Sub Categories
                             </td>
                             <td><a href="#" class="btn btn-primary">Detail</a></td>
                           </tr>     
-                          {{ $i++ }}        
+                                 
                         @endforeach
                         </tbody>
                       </table>

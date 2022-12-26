@@ -332,6 +332,7 @@ Admin - State
                         <table class="table table-striped" id="table-1">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>State</th>
                                     <th>Country</th>
                                     <th>Status</th>
@@ -341,10 +342,10 @@ Admin - State
                             <tbody>
 
 
-                                @foreach ($states as $state)
+                                @foreach ($states as $s => $state)
 
                                 <tr>
-
+                                    <td>{{ ++$s }}</td>
                                     <td>{{ $state -> name }}</td>
                                     <td>{{ $state -> country}}</td>
 

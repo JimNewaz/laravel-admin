@@ -41,12 +41,12 @@ Admin - All Tickets
                           </tr>
                         </thead>
                         <tbody>        
-                            {{ $i=1 }}                  
-                          @foreach ($ticket as $tickets)                      
+                                             
+                          @foreach ($ticket as $tic => $tickets)                      
                 
                             <tr>
                               <td>
-                                {{ $i }}
+                                {{ ++$tic }}
                               </td>
                               <td>{{ $tickets -> title }}</td>
                               <td>{{ $tickets -> subtitle }}</td>
@@ -75,7 +75,7 @@ Admin - All Tickets
                               <td><a href="#" class="btn btn-primary">Detail</a></td>
                             </tr>
 
-                          {{ $i++ }}
+                          
 
                           @endforeach
                           

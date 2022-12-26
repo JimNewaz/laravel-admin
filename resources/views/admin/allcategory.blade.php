@@ -40,11 +40,11 @@ Admin - All Categories
                         </thead>
                         <tbody>
                           <!-- {{ $i = 1 }} -->
-                          @foreach ($categories as $category)                      
+                          @foreach ($categories as $cat => $category)                      
                 
                             <tr>
                               <td>
-                                {{ $i }}
+                                {{ ++$cat }}
                               </td>
                               <td>{{ $category -> category_name }}</td>
                               <td>{{ $category -> slug }}</td>
@@ -62,7 +62,7 @@ Admin - All Categories
                               <td><a href="#" class="btn btn-primary">Detail</a></td>
                             </tr>
 
-                          {{ $i++ }}
+                          
 
                           @endforeach
                           

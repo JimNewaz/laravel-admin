@@ -36,21 +36,21 @@ Admin - All Brands
                         </thead>
                         <tbody>
                           <!-- {{ $i=1 }} -->
-                          @foreach($brands as $brand)
+                          @foreach($brands as $brand => $br)
                           <tr>
                             <td>
-                              {{ $i }}
+                              {{ ++$brand }}
                             </td>
-                            <td>{{ $brand -> brand_name }}</td>
+                            <td>{{ $br -> brand_name }}</td>
                             
                             <td>
-                            {{ $brand -> product_count }}
+                            {{ $br -> product_count }}
                             </td>
                             
                             
                             <td><a href="#" class="btn btn-primary">Detail</a></td>
                           </tr>
-                          {{ $i++ }}
+                          
                           @endforeach
                           
                           

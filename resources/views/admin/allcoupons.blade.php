@@ -28,7 +28,7 @@ Admin - All Coupons
                       <table class="table table-striped" id="table-1">
                         <thead>
                           <tr>
-                            
+                            <th>#</th>
                             <th>Coupon Title</th>
                             <th>Coupon Code</th>
                             <th>Discount On</th>
@@ -43,10 +43,10 @@ Admin - All Coupons
                         </thead>
                         <tbody>
                           
-                          @foreach($coupons as $coupon)                      
+                          @foreach($coupons as $cou => $coupon)                      
                 
                             <tr>
-                              
+                              <td>{{ ++$cou }}</td>
                               <td>{{ $coupon -> title }}</td>
                               <td>{{ $coupon -> code }}</td>
                               <td>{{ $coupon -> discounton }}</td>

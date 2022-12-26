@@ -152,7 +152,11 @@ Admin - Add Product
 </style>
 
 <div class="container">
-    <form action="">
+    <form action="{{ route('admin.addproduct') }}" method="POST">
+
+        @csrf
+
+        @method('GET')
         <div class="row">
             <div class="col-8">
                 <div class="card">
@@ -295,12 +299,14 @@ Admin - Add Product
                             <input type="color" id="favcolor" name="color" value="#ff0000" class="form-control">
                         </div>
 
+                        
                         <div class="form-group ">
                             <label for="category" class=" col-form-label">Select Category</label>
                             <div class="">
                                 <select class="form-control" name="category">
-                                    <option value="active">Publish</option>
-                                    <option value="inactive">Draft</option>
+                                    @foreach ($category as $cat)
+                                    <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -308,12 +314,9 @@ Admin - Add Product
                         <div class="form-group">
                             <label>Select Sub Category</label>
                             <select class="form-control selectric" name="subcategory" multiple="">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                                <option>Option 5</option>
-                                <option>Option 6</option>
+                                @foreach ($subcategory as $scat)
+                                    <option value="{{ $scat->id }}">{{ $scat->sub_category_name }}</option>
+                                @endforeach
                             </select>
                         </div>
 

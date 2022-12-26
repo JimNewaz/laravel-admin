@@ -29,7 +29,7 @@ Admin - All Subscribers
                             <thead>
                                 <tr>
                                     <th class="">
-                                        ID
+                                        #
                                     </th>
                                     <th>Email</th>
                                     <th>Action</th>
@@ -38,11 +38,11 @@ Admin - All Subscribers
                             </thead>
                             <tbody>
                                 <!-- {{ $i = 1 }} -->
-                                @foreach ($subscriber as $sub)
+                                @foreach ($subscriber as $s => $sub)
 
                                 <tr>
-
-                                    <td>{{ $sub -> id }}</td>
+                                    
+                                    <td>{{ ++$s }}</td>
                                     <td>{{ $sub -> email}}</td>
 
 
