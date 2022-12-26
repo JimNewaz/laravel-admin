@@ -96,6 +96,7 @@ Route::middleware('auth','role:admin')->group(function (){
     Route::controller(ProductController::class)->group(function(){
         //Add products
         Route::get('/admin/add-product', 'AddProduct')->name('admin.addproduct');
+        Route::get('/admin/store-product', 'StoreProduct')->name('admin.storeproduct');
         Route::get('/admin/all-products', 'AllProducts')->name('admin.allproducts');
         
     });

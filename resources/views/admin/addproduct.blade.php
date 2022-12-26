@@ -152,7 +152,7 @@ Admin - Add Product
 </style>
 
 <div class="container">
-    <form action="{{ route('admin.addproduct') }}" method="POST">
+    <form action="{{ route('admin.storeproduct') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -216,7 +216,7 @@ Admin - Add Product
                                 <label class="upload__btn">
                                     <span>Upload images</span>
                                     <input type="file" multiple="" data-max_length="7" class="upload__inputfile"
-                                        id="upload">
+                                        id="upload" name="galleryimage[]">
                                 </label>
                                 <small>Upto 8 images</small>
                             </div>
@@ -244,7 +244,7 @@ Admin - Add Product
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-left col-12 3">Item in Stock</label>
                             <div class="col-sm-12 ">
-                                <input type="number" class="form-control" name="stock">
+                                <input type="number" class="form-control" name="item_in_stock">
                             </div>
                         </div>
 
@@ -261,13 +261,13 @@ Admin - Add Product
                         <div class="form-group row mb-4">
                             <div class="col-sm-12 col-md-6">
                                 <label class="col-form-label text-md-left">Regular Price</label>
-                                <input type="number" class="form-control" name="regular">
+                                <input type="number" class="form-control" name="regular_price">
                             </div>
 
 
                             <div class="col-sm-12 col-md-6">
                                 <label class="col-form-label text-md-left">Sale Price</label>
-                                <input type="number" class="form-control" name="sale">
+                                <input type="number" class="form-control" name="selling_price">
                             </div>
                         </div>
 
@@ -305,17 +305,19 @@ Admin - Add Product
                             <div class="">
                                 <select class="form-control" name="category">
                                     @foreach ($category as $cat)
-                                    <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                                    <option value="{{ $cat->category_name }}">{{ $cat->category_name }}</option>                                        
                                     @endforeach
                                 </select>
                             </div>
                         </div>
 
+                                               
+
                         <div class="form-group">
                             <label>Select Sub Category</label>
-                            <select class="form-control selectric" name="subcategory" multiple="">
+                            <select class="form-control selectric" name="sub_category" multiple="">
                                 @foreach ($subcategory as $scat)
-                                    <option value="{{ $scat->id }}">{{ $scat->sub_category_name }}</option>
+                                    <option value="{{ $scat->sub_category_name}}">{{ $scat->sub_category_name }}</option>
                                 @endforeach
                             </select>
                         </div>
