@@ -58,6 +58,27 @@ class DashboardController extends Controller
         
         return redirect()->route('admin.allcategory')->with('message', 'Category has been added successfully');
     }    
+
+    public function UpdateCategory(Request $request, Category $id){
+
+        // dd($id);
+        
+
+        $request->validate([
+            'category_name'=>'required',            
+        ]); 
+        $category = Category::find($id);
+        // Getting values from the blade template form
+        // $category->category_name =  $request->get('category_name');
+
+        $data = [
+            'category_name' => $request->category_name,            
+        ];
+        
+        $category->update($data);      
+
+        return redirect()->route('admin.allcategory')->with('message', 'Category has been added successfully');
+    }
     
     public function AllCategory(){
         $categories = Category::latest()->get();         

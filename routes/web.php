@@ -39,9 +39,12 @@ Route::middleware('auth','role:admin')->group(function (){
         
         //Category
         Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
+        // Route::get('/admin/update-category/{id}', 'UpdateCategory')->name('admin.updatecategory'); 
+        
         Route::post('/admin/store-category', 'StoreCategory')->name('admin.storecategory');       
         Route::get('/admin/allcategory', 'AllCategory')->name('admin.allcategory');
 
+         
         //Sub Category
         Route::get('/admin/create-sub-category', 'Createsubcategory')->name('admin.createsubcategory');
         Route::get('/admin/store-sub-category', 'StoreSubCategory')->name('admin.storesubcategory');
