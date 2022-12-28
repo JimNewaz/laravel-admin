@@ -35,11 +35,18 @@ Route::middleware('auth','role:admin')->group(function (){
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
 
+        Route::get('/admin/alladmins', 'AllAdmins')->name('admin.alladmins');
+        Route::get('/admin/addadmin', 'AddAdmin')->name('admin.addadmin');
+
+        Route::get('/admin/allusers', 'AllUsers')->name('admin.allusers');
+        Route::get('/admin/adduser', 'AddUser')->name('admin.adduser');
+
+
         Route::get('/admin/messages', 'ContactMessage')->name('admin.messages');
         
         //Category
         Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
-        // Route::get('/admin/update-category/{id}', 'UpdateCategory')->name('admin.updatecategory'); 
+        Route::get('/admin/update-category/{id}', 'UpdateCategory')->name('admin.updatecategory'); 
         
         Route::post('/admin/store-category', 'StoreCategory')->name('admin.storecategory');       
         Route::get('/admin/allcategory', 'AllCategory')->name('admin.allcategory');
