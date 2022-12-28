@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -17,12 +19,42 @@ use App\Models\Country;
 use App\Models\State;
 use App\Models\Tax;
 use App\Models\StateTax;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
     public function Dashboard(){
         return view('admin.dashboard');
     }
+
+    public function AllAdmins(){
+        $users = User::all();
+        
+        $role = DB::table('users')
+        ->join('role_user', 'users.id', "=", 'role_user.user_id')
+        ->where('user_id', 1)
+        ->get();
+
+        return view('admin.alladmins', compact('users', 'role'));
+    }
+
+    public function AddAdmin(){
+        $category = Category::all();
+        return view('admin.addadmin', compact('category'));
+    }
+
+    public function AllUsers(){
+        $users = User::all();
+        return view('admin.allusers', compact('users'));
+    }
+
+    public function AddUser(){
+        $category = Category::all();
+        return view('admin.adduser', compact('category'));
+    }
+
+
+
     public function ContactMessage(){
         return view('admin.messages');
     }
@@ -59,17 +91,14 @@ class DashboardController extends Controller
         return redirect()->route('admin.allcategory')->with('message', 'Category has been added successfully');
     }    
 
-    public function UpdateCategory(Request $request, Category $id){
-
-        // dd($id);
+    public function UpdateCategory(Request $request, Category $id){       
         
 
         $request->validate([
             'category_name'=>'required',            
         ]); 
         $category = Category::find($id);
-        // Getting values from the blade template form
-        // $category->category_name =  $request->get('category_name');
+        
 
         $data = [
             'category_name' => $request->category_name,            

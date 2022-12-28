@@ -34,144 +34,10 @@
                         <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                                 <i data-feather="maximize"></i>
                             </a></li>
-                        <li>
-                            <form class="form-inline mr-auto">
-                                <div class="search-element">
-                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                                        data-width="200">
-                                    <button class="btn" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </li>
+                        
                     </ul>
                 </div>
-                <ul class="navbar-nav navbar-right">
-                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                            class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
-                            <span class="badge headerBadge1">
-                                6 </span> </a>
-                        <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-                            <div class="dropdown-header">
-                                Messages
-                                <div class="float-right">
-                                    <a href="#">Mark All As Read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-list-content dropdown-list-message">
-                                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="{{ asset('dashboard_asset/assets') }}/img/users/user-1.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">John
-                                            Deo</span>
-                                        <span class="time messege-text">Please check your mail !!</span>
-                                        <span class="time">2 Min Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-2.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                                            Smith</span> <span class="time messege-text">Request for leave
-                                            application</span>
-                                        <span class="time">5 Min Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-5.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
-                                            Ryan</span> <span class="time messege-text">Your payment invoice is
-                                            generated.</span> <span class="time">12 Min Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-4.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
-                                            Smith</span> <span class="time messege-text">hii John, I have upload
-                                            doc
-                                            related to task.</span> <span class="time">30
-                                            Min Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-3.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
-                                            Joshi</span> <span class="time messege-text">Please do as specify.
-                                            Let me
-                                            know if you have any query.</span> <span class="time">1
-                                            Days Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets') }}/img/users/user-2.png"
-                                            class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                                            Smith</span> <span class="time messege-text">Client Requirements</span>
-                                        <span class="time">2 Days Ago</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="dropdown-footer text-center">
-                                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                            class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-                            <div class="dropdown-header">
-                                Notifications
-                                <div class="float-right">
-                                    <a href="#">Mark All As Read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-list-content dropdown-list-icons">
-                                <a href="#" class="dropdown-item dropdown-item-unread"> <span
-                                        class="dropdown-item-icon bg-primary text-white"> <i class="fas
-												fa-code"></i>
-                                    </span> <span class="dropdown-item-desc"> Template update is
-                                        available now! <span class="time">2 Min
-                                            Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span
-                                        class="dropdown-item-icon bg-info text-white"> <i class="far
-												fa-user"></i>
-                                    </span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
-                                            Sugiharto</b> are now friends <span class="time">10 Hours
-                                            Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span
-                                        class="dropdown-item-icon bg-success text-white"> <i class="fas
-												fa-check"></i>
-                                    </span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
-                                        moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
-                                            Hours
-                                            Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span
-                                        class="dropdown-item-icon bg-danger text-white"> <i
-                                            class="fas fa-exclamation-triangle"></i>
-                                    </span> <span class="dropdown-item-desc"> Low disk space. Let's
-                                        clean it! <span class="time">17 Hours Ago</span>
-                                    </span>
-                                </a> <a href="#" class="dropdown-item"> <span
-                                        class="dropdown-item-icon bg-info text-white"> <i class="fas
-												fa-bell"></i>
-                                    </span> <span class="dropdown-item-desc"> Welcome to Otika
-                                        template! <span class="time">Yesterday</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="dropdown-footer text-center">
-                                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
+                <ul class="navbar-nav navbar-right">                    
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
                                 src="{{ asset('dashboard_asset/assets') }}/img/user.png" class="user-img-radious-style">
@@ -211,18 +77,16 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="briefcase"></i><span>Admin Manage</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-                                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.alladmins')}}">All Admin</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.addadmin')}}">Add New Admin</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="command"></i><span>User Manage</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chat.html">Chat</a></li>
-                                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li><a class="nav-link" href="calendar.html">Calendar</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.allusers')}}">All Users</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.adduser')}}">Add New User</a></li>                                
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -309,23 +173,15 @@
                                     data-feather="image"></i><span>Coupon</span></a>      
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('admin.createcoupon') }}">Create Coupon</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">All Coupons</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.allcoupons') }}">All Coupons</a></li>
                             </ul>                            
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="flag"></i><span>Sliders</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="carousel.html">Bootstrap Carousel.html</a></li>
-                                <li><a class="nav-link" href="owl-carousel.html">Owl Carousel</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="nav-link" href="timeline.html"><i
-                                    data-feather="sliders"></i><span>Timeline</span></a></li>
+                        
+                        
                         
 
                     
-                                    <li class="menu-header">Country & Tax</li>
+                        <li class="menu-header">Country & Tax</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i>
                             <span>Country Manage</span></a>
@@ -344,7 +200,7 @@
                             </ul>
                         </li>
                         
-                        <li class="menu-header">Pages</li>
+                        <!-- <li class="menu-header">Pages</li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="user-check"></i><span>Auth</span></a>
@@ -398,7 +254,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </aside>
             </div>
