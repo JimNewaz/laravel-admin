@@ -63,7 +63,7 @@ Admin - Add User
                         <div class="form-group row">
                             <label for="categoryimage" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" name="category_image">
+                                <input type="text" class="form-control" name="category_image">
                             </div>
                         </div>
 
